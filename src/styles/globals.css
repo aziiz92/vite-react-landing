@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --brand-primary: #a78bfa;
+  --brand-secondary: #38bdf8;
+  --brand-accent: #f472b6;
+  --brand-gradient-hero: radial-gradient(
+      circle at 20% -10%,
+      rgba(167, 139, 250, 0.28),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(56, 189, 248, 0.2),
+      transparent 45%
+    );
+  --brand-gradient-cta: radial-gradient(
+      circle at 15% 25%,
+      rgba(244, 114, 182, 0.28),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(167, 139, 250, 0.22),
+      transparent 55%
+    );
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 3px;
+}

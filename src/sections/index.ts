@@ -1,0 +1,10 @@
+export { HeroSection } from "./Hero";
+export { SocialProofSection } from "./SocialProof";
+export { FeaturesSection } from "./Features";
+export { PatternsSection } from "./Patterns";
+export { StepsSection } from "./Steps";
+export { TechSection } from "./Tech";
+export { TestimonialsSection } from "./Testimonials";
+export { FAQSection } from "./FAQ";
+export { CTASection } from "./CTA";
+export { FooterSection } from "./Footer";
