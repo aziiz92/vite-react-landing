@@ -1,0 +1,24 @@
+You are working in a Vite + React + TypeScript + Tailwind landing template.
+
+Task: add a new section that is fully config-driven and toggleable.
+
+Constraints:
+- Keep components small, Tailwind-based.
+- Respect accessibility and `prefers-reduced-motion`.
+- Do not add UI frameworks or heavy dependencies.
+- The new section must return `null` when disabled.
+
+Steps to follow:
+1) Update types:
+   - If needed, extend `src/config/types.ts` with a new section type and add it to `ContentConfig`.
+2) Update config:
+   - Add `content.<newSection>` in `src/config/content.ts` with at least `id`, `enabled`, `title` (if relevant), and section fields.
+3) Create the section component:
+   - Add `src/sections/<NewSection>.tsx` that reads from `content` and uses `Section` + `Container`.
+4) Compose it:
+   - Add it to `src/app/App.tsx` in a sensible order.
+5) Optional:
+   - Add a `navLinks` entry in `src/config/site.ts` that points to the section id (and defaults to `enabled: false`).
+
+New section idea: <IDEA>
+

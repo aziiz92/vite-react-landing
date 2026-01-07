@@ -1,20 +1,23 @@
 import { motion } from "framer-motion";
-import { faqs } from "../config/content";
+import { content } from "../config/content";
 import { fadeUp, stagger, useReducedMotion } from "../shared/motion";
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
 import { SectionHeading } from "../components/SectionHeading";
 
 export function FAQSection() {
+  const section = content.faq;
   const reduceMotion = useReducedMotion();
 
+  if (!section.enabled) return null;
+
   return (
-    <Section id="faq">
+    <Section id={section.id}>
       <Container>
         <SectionHeading
           eyebrow="FAQ"
-          title="Everything you might ask before forking"
-          description="Keep it short. Link out to docs when needed."
+          title={section.title}
+          description={section.description}
         />
 
         <motion.div
@@ -24,7 +27,7 @@ export function FAQSection() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 space-y-3"
         >
-          {faqs.map((item) => (
+          {section.items.map((item) => (
             <motion.div key={item.question} variants={fadeUp}>
               <details className="group rounded-2xl border border-slate-950/10 bg-slate-950/5 p-5 dark:border-white/10 dark:bg-white/5">
                 <summary className="cursor-pointer list-none text-sm font-semibold text-slate-950 dark:text-white">

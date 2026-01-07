@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
-import { socialProof } from "../config/content";
+import { content } from "../config/content";
 import { fadeUp, stagger, useReducedMotion } from "../shared/motion";
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
 
 export function SocialProofSection() {
+  const section = content.socialProof;
   const reduceMotion = useReducedMotion();
 
+  if (!section.enabled) return null;
+
   return (
-    <Section className="py-10 sm:py-12">
+    <Section id={section.id} className="py-10 sm:py-12">
       <Container>
         <motion.div
           variants={stagger}
@@ -21,19 +24,21 @@ export function SocialProofSection() {
             variants={fadeUp}
             className="text-sm font-semibold text-slate-600 dark:text-white/60"
           >
-            {socialProof.title}
+            {section.title}
           </motion.p>
-          <motion.p
-            variants={fadeUp}
-            className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-white/60"
-          >
-            {socialProof.note}
-          </motion.p>
+          {section.note ? (
+            <motion.p
+              variants={fadeUp}
+              className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-white/60"
+            >
+              {section.note}
+            </motion.p>
+          ) : null}
           <motion.div
             variants={fadeUp}
             className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold tracking-tight text-slate-800 dark:text-white/80"
           >
-            {socialProof.logos.map((logo) => (
+            {section.logos.map((logo) => (
               <span key={logo} className="opacity-80">
                 {logo}
               </span>

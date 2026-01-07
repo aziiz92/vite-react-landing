@@ -1,8 +1,12 @@
 import { site } from "../config/site";
+import { content } from "../config/content";
 import { Container } from "../components/Container";
 
 export function FooterSection() {
+  const section = content.footer;
   const year = new Date().getFullYear();
+
+  if (!section.enabled) return null;
 
   return (
     <footer className="border-t border-slate-950/10 py-12 dark:border-white/10">
@@ -17,11 +21,11 @@ export function FooterSection() {
           <div className="flex flex-wrap gap-3 text-sm">
             {site.socials.map((s) => (
               <a
-                key={s.href}
-                href={s.href}
+                key={s.url}
+                href={s.url}
                 className="rounded-full bg-slate-950/5 px-3 py-1 text-slate-700 ring-1 ring-slate-950/10 transition hover:bg-slate-950/10 hover:text-slate-950 dark:bg-white/5 dark:text-white/70 dark:ring-white/10 dark:hover:bg-white/10 dark:hover:text-white"
               >
-                {s.label}
+                {s.name}
               </a>
             ))}
           </div>

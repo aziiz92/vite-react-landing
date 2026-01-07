@@ -1,0 +1,17 @@
+Audit this Vite + React + TypeScript + Tailwind landing page for accessibility and performance.
+
+Constraints:
+- Do not add heavy new dependencies.
+- Respect `prefers-reduced-motion`.
+- Keep UI components small and semantic.
+
+Do:
+1) Identify any missing semantic landmarks, heading order issues, or focus problems.
+2) Check interactive elements (buttons/links) for accessible names and keyboard usability.
+3) Review motion/animation usage for reduced-motion handling.
+4) Look for obvious performance issues (unnecessary re-renders, heavy assets, blocking work).
+
+Output:
+- A concise list of findings.
+- Minimal patches to fix the top issues (keep changes focused).
+

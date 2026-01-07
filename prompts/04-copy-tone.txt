@@ -1,0 +1,23 @@
+You are editing the landing page copy in a config-driven repo.
+
+Task: rewrite all copy in `src/config/content.ts` to match this vibe:
+<VIBE>
+
+Rules:
+- Keep the object shape compatible with `ContentConfig` (`src/config/types.ts`).
+- Do not change section IDs.
+- Keep tone neutral and open-source friendly (no aggressive sales language).
+- Keep copy short and clearly editable.
+
+Sections to rewrite (only text fields):
+- hero: headline/subheadline/CTA labels/stats labels+values
+- socialProof: title/note/logos (logos can be placeholders)
+- features: title/description/items[]
+- howItWorks: title/description/steps[]
+- testimonials: title/description/items[]
+- faq: title/description/items[]
+- cta: title/description/CTA labels
+
+Output:
+- A single patch updating `src/config/content.ts`.
+

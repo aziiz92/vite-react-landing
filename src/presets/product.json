@@ -1,0 +1,133 @@
+{
+  "site": {
+    "siteName": "Product Landing",
+    "tagline": "A readable, neutral product landing template.",
+    "description": "A small landing template for products: clear sections, editable copy, and optional motion/3D patterns.",
+    "authorName": "Your Team",
+    "primaryColor": "#0EA5E9",
+    "secondaryColor": "#34D399",
+    "accentColor": "#A78BFA",
+    "background": "#FFFFFF",
+    "gradient": "radial-gradient(circle at 20% 0%, rgba(14, 165, 233, 0.20), transparent 55%), radial-gradient(circle at 90% 30%, rgba(52, 211, 153, 0.16), transparent 45%)",
+    "socials": [
+      { "name": "Docs", "url": "#" },
+      { "name": "GitHub", "url": "https://github.com/" },
+      { "name": "Support", "url": "mailto:support@example.com" }
+    ],
+    "navLinks": [
+      { "label": "Features", "href": "#features", "enabled": true },
+      { "label": "How it works", "href": "#how-it-works", "enabled": true },
+      { "label": "Testimonials", "href": "#testimonials", "enabled": true },
+      { "label": "FAQ", "href": "#faq", "enabled": true },
+      { "label": "Tech", "href": "#tech", "enabled": true }
+    ],
+    "footerLinks": [
+      { "label": "Docs", "href": "#" },
+      { "label": "Changelog", "href": "#" },
+      { "label": "License", "href": "https://opensource.org/licenses/MIT" }
+    ],
+    "repo": {
+      "url": "https://github.com/your-handle/vite-react-landing",
+      "useTemplateUrl": "https://github.com/your-handle/vite-react-landing/generate"
+    },
+    "seo": {
+      "title": "Product Landing — Landing starter",
+      "description": "A readable, neutral product landing template.",
+      "ogImagePath": "/og.svg",
+      "url": "https://example.com"
+    },
+    "features": { "enable3dHero": true },
+    "fonts": {
+      "sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "content": {
+    "hero": {
+      "id": "hero",
+      "enabled": true,
+      "headline": "A clean landing page that stays editable.",
+      "subheadline": "Keep the layout stable while you iterate on message, screenshots, and docs links.",
+      "primaryCta": { "label": "See features", "href": "#features" },
+      "secondaryCta": { "label": "How it works", "href": "#how-it-works" },
+      "stats": [
+        { "label": "Structure", "value": "sections" },
+        { "label": "Output", "value": "static" },
+        { "label": "Edits", "value": "config" }
+      ]
+    },
+    "socialProof": {
+      "id": "social-proof",
+      "enabled": true,
+      "title": "Used by (placeholder)",
+      "note": "Replace with real references when available — or disable the section.",
+      "logos": ["Team", "Community", "Open Source", "Example Co."]
+    },
+    "features": {
+      "id": "features",
+      "enabled": true,
+      "title": "What it helps you show",
+      "description": "Use short paragraphs, avoid hype, and link to docs where needed.",
+      "items": [
+        { "title": "Clear structure", "description": "Hero, features, how-it-works, testimonials, FAQ, and CTA." },
+        { "title": "Editable defaults", "description": "All copy and lists live in `src/config/content.ts`." },
+        { "title": "Brand variables", "description": "Colors, gradient, and links live in `src/config/site.ts`." },
+        { "title": "Optional patterns", "description": "Motion and 3D are included as optional patterns, not requirements." }
+      ]
+    },
+    "howItWorks": {
+      "id": "how-it-works",
+      "enabled": true,
+      "title": "How it works",
+      "description": "Keep the copy concrete: what it does, who it’s for, and what it’s not.",
+      "steps": [
+        { "title": "Describe the problem", "description": "Start with one sentence and refine as you learn." },
+        { "title": "List the core features", "description": "Prefer fewer items with clearer descriptions." },
+        { "title": "Point to docs", "description": "Link to a README or docs page instead of over-explaining." }
+      ]
+    },
+    "testimonials": {
+      "id": "testimonials",
+      "enabled": true,
+      "title": "Testimonials (placeholder)",
+      "description": "Replace with real quotes, or disable until you have them.",
+      "items": [
+        { "quote": "Short, credible feedback reads best.", "name": "Name", "role": "Role", "company": "Company" },
+        { "quote": "The structure makes edits quick.", "name": "Name", "role": "Role", "company": "Company" },
+        { "quote": "Reduced motion support is a good default.", "name": "Name", "role": "Role", "company": "Company" }
+      ]
+    },
+    "faq": {
+      "id": "faq",
+      "enabled": true,
+      "title": "FAQ",
+      "description": "Use this to set expectations and link out to real docs.",
+      "items": [
+        { "question": "Where do I edit content?", "answer": "Update `src/config/content.ts`. Each section is a typed object with an `enabled` toggle." },
+        { "question": "Can I reorder sections?", "answer": "Yes. Reorder the components in `src/app/App.tsx`." },
+        { "question": "Can I remove motion?", "answer": "Yes. Motion respects reduced motion, and you can remove Framer Motion if you want." }
+      ]
+    },
+    "cta": {
+      "id": "cta",
+      "enabled": true,
+      "title": "Get it running locally",
+      "description": "Install, run init, then iterate on copy and links.",
+      "primaryCta": { "label": "Run init", "href": "#how-it-works" },
+      "secondaryCta": { "label": "Open config files", "href": "#features" }
+    },
+    "footer": { "id": "footer", "enabled": true },
+    "tech": {
+      "id": "tech",
+      "enabled": true,
+      "title": "Modern stack, small surface area",
+      "description": "Vite + React + TypeScript, styled with Tailwind. Motion and 3D are optional.",
+      "bullets": [
+        { "title": "Fast dev loop", "description": "Vite-based dev server and a static build." },
+        { "title": "Accessible defaults", "description": "Semantic landmarks and focus-visible styles." },
+        { "title": "Reduced motion support", "description": "Animations reduce automatically when users ask for it." }
+      ]
+    }
+  }
+}
+

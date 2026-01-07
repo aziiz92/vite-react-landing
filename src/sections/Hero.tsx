@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { hero } from "../config/content";
+import { content } from "../config/content";
 import { site } from "../config/site";
 import { fadeUp, stagger, useReducedMotion } from "../shared/motion";
 import { canUseWebGL } from "../shared/webgl";
@@ -81,7 +81,7 @@ function HeroVisual() {
     return <StaticOrnament reason="Respects your reduced motion preference." />;
   }
 
-  if (!site.features.enable3dHero) {
+  if (!site.features?.enable3dHero) {
     return <StaticOrnament reason="3D is disabled in `src/config/site.ts`." />;
   }
 
@@ -119,10 +119,13 @@ function HeroVisual() {
 }
 
 export function HeroSection() {
+  const section = content.hero;
   const reduceMotion = useReducedMotion();
 
+  if (!section.enabled) return null;
+
   return (
-    <Section className="pt-10 sm:pt-14">
+    <Section id={section.id} className="pt-10 sm:pt-14">
       <Container className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
         <motion.div
           variants={stagger}
@@ -140,37 +143,41 @@ export function HeroSection() {
             variants={fadeUp}
             className="text-balance text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl dark:text-white"
           >
-            {hero.headline}
+            {section.headline}
           </motion.h1>
           <motion.p
             variants={fadeUp}
             className="text-pretty text-base leading-relaxed text-slate-600 sm:text-lg dark:text-white/70"
           >
-            {hero.subheadline}
+            {section.subheadline}
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3">
-            <ButtonLink href={hero.primaryCta.href} variant="primary">
-              {hero.primaryCta.label}
+            <ButtonLink href={section.primaryCta.href} variant="primary">
+              {section.primaryCta.label}
             </ButtonLink>
-            <ButtonLink href={hero.secondaryCta.href} variant="secondary">
-              {hero.secondaryCta.label}
-            </ButtonLink>
+            {section.secondaryCta ? (
+              <ButtonLink href={section.secondaryCta.href} variant="secondary">
+                {section.secondaryCta.label}
+              </ButtonLink>
+            ) : null}
           </motion.div>
-          <motion.dl
-            variants={fadeUp}
-            className="grid grid-cols-3 gap-4 rounded-2xl border border-slate-950/10 bg-slate-950/5 p-4 dark:border-white/10 dark:bg-white/5"
-          >
-            {hero.stats.map((stat) => (
-              <div key={stat.label}>
-                <dt className="text-xs font-semibold text-slate-500 dark:text-white/60">
-                  {stat.label}
-                </dt>
-                <dd className="mt-1 text-sm font-semibold text-slate-950 dark:text-white">
-                  {stat.value}
-                </dd>
-              </div>
-            ))}
-          </motion.dl>
+          {section.stats?.length ? (
+            <motion.dl
+              variants={fadeUp}
+              className="grid grid-cols-3 gap-4 rounded-2xl border border-slate-950/10 bg-slate-950/5 p-4 dark:border-white/10 dark:bg-white/5"
+            >
+              {section.stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt className="text-xs font-semibold text-slate-500 dark:text-white/60">
+                    {stat.label}
+                  </dt>
+                  <dd className="mt-1 text-sm font-semibold text-slate-950 dark:text-white">
+                    {stat.value}
+                  </dd>
+                </div>
+              ))}
+            </motion.dl>
+          ) : null}
         </motion.div>
 
         <motion.div

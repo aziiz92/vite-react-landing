@@ -7,6 +7,13 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "preset": "node scripts/apply-preset.mjs",
+    "preset:base": "node scripts/apply-preset.mjs base",
+    "preset:creator": "node scripts/apply-preset.mjs creator",
+    "preset:startup": "node scripts/apply-preset.mjs startup",
+    "preset:agency": "node scripts/apply-preset.mjs agency",
+    "preset:product": "node scripts/apply-preset.mjs product",
+    "init": "node scripts/init.mjs",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "preview": "vite preview"

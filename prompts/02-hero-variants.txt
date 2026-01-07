@@ -1,0 +1,20 @@
+You are editing a config-driven landing page.
+
+Task: generate 3 hero variants (clean, bold, minimal) WITHOUT changing the hero component.
+
+Rules:
+- Only edit `src/config/content.ts`.
+- Keep `content.hero` shape compatible with `HeroSectionContent` (`src/config/types.ts`).
+- No salesy language (avoid "buy", "pricing plans", "start trial").
+- Keep the CTA labels neutral (e.g., "Read docs", "See features", "Get started").
+
+For each variant, produce:
+- `headline`
+- `subheadline`
+- `primaryCta` and `secondaryCta`
+- optional `stats` (3 short items)
+
+Then:
+- Pick the best one for this project’s vibe: <VIBE>
+- Apply it by updating `content.hero` in `src/config/content.ts`.
+

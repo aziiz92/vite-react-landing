@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { patterns } from "../config/content";
+import { content } from "../config/content";
 import { fadeUp, stagger, useReducedMotion } from "../shared/motion";
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
@@ -7,15 +7,18 @@ import { SectionHeading } from "../components/SectionHeading";
 import { cn } from "../shared/cn";
 
 export function PatternsSection() {
+  const section = content.patterns;
   const reduceMotion = useReducedMotion();
 
+  if (!section?.enabled) return null;
+
   return (
-    <Section id="patterns">
+    <Section id={section.id}>
       <Container>
         <SectionHeading
           eyebrow="Patterns"
-          title="Example sections to remix"
-          description="These are starter blocks. Swap the copy, reorder the page, and delete what you don’t need."
+          title={section.title}
+          description={section.description}
           align="center"
         />
         <motion.div
@@ -25,17 +28,18 @@ export function PatternsSection() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 grid gap-4 lg:grid-cols-3"
         >
-          {patterns.map((pattern) => (
+          {section.items.map((pattern) => (
             <motion.div
               key={pattern.title}
               variants={fadeUp}
               className={cn(
                 "relative rounded-2xl border border-slate-950/10 bg-slate-950/5 p-6 dark:border-white/10 dark:bg-white/5",
-                pattern.highlighted &&
-                  "ring-1 ring-slate-950/15 dark:bg-white/8 dark:ring-white/20",
+                "highlighted" in pattern && pattern.highlighted
+                  ? "ring-1 ring-slate-950/15 dark:bg-white/8 dark:ring-white/20"
+                  : null,
               )}
             >
-              {pattern.highlighted ? (
+              {"highlighted" in pattern && pattern.highlighted ? (
                 <div className="absolute -top-3 left-6 rounded-full bg-[color:var(--brand-primary)] px-3 py-1 text-xs font-semibold text-slate-950">
                   Good default
                 </div>

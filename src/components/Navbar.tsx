@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { site } from "../config/site";
+import { content } from "../config/content";
 import { useReducedMotion } from "../shared/motion";
 import { scrollToId } from "../shared/scroll";
 import { cn } from "../shared/cn";
@@ -12,7 +13,9 @@ export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
 
-  const items = useMemo(() => site.nav, []);
+  const items = useMemo(() => site.navLinks.filter((item) => item.enabled), []);
+  const primaryCta = content.hero.primaryCta;
+  const hasInternalPrimaryCta = primaryCta.href.startsWith("#");
 
   return (
     <Container className="flex h-16 items-center justify-between gap-4">
@@ -37,12 +40,13 @@ export function Navbar() {
       >
         {items.map((item) => (
           <a
-            key={item.id}
+            key={item.href}
             href={item.href}
             onClick={(e) => {
+              if (!item.href.startsWith("#")) return;
               e.preventDefault();
               setOpen(false);
-              scrollToId(item.id, { smooth: !reduceMotion });
+              scrollToId(item.href.slice(1), { smooth: !reduceMotion });
             }}
             className="transition hover:text-slate-950 dark:hover:text-white"
           >
@@ -61,9 +65,20 @@ export function Navbar() {
         >
           {theme === "dark" ? "Light" : "Dark"}
         </Button>
-        <ButtonLink href="#cta" variant="secondary" className="hidden md:inline-flex">
-          Use template
-        </ButtonLink>
+        {hasInternalPrimaryCta ? (
+          <ButtonLink
+            href={primaryCta.href}
+            variant="secondary"
+            className="hidden md:inline-flex"
+            onClick={(e) => {
+              e.preventDefault();
+              setOpen(false);
+              scrollToId(primaryCta.href.slice(1), { smooth: !reduceMotion });
+            }}
+          >
+            {primaryCta.label}
+          </ButtonLink>
+        ) : null}
         <button
           type="button"
           className={cn(
@@ -87,12 +102,13 @@ export function Navbar() {
           <div className="flex flex-col gap-3">
             {items.map((item) => (
               <a
-                key={item.id}
+                key={item.href}
                 href={item.href}
                 onClick={(e) => {
+                  if (!item.href.startsWith("#")) return;
                   e.preventDefault();
                   setOpen(false);
-                  scrollToId(item.id, { smooth: !reduceMotion });
+                  scrollToId(item.href.slice(1), { smooth: !reduceMotion });
                 }}
                 className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-800 ring-1 ring-slate-950/10 transition hover:bg-slate-950/5 hover:text-slate-950 dark:text-white/80 dark:ring-white/10 dark:hover:bg-white/5 dark:hover:text-white"
               >
@@ -103,9 +119,19 @@ export function Navbar() {
               <Button type="button" variant="ghost" onClick={toggleTheme}>
                 Theme: {theme === "dark" ? "Dark" : "Light"}
               </Button>
-              <ButtonLink href="#cta" variant="secondary">
-                Use template
-              </ButtonLink>
+              {hasInternalPrimaryCta ? (
+                <ButtonLink
+                  href={primaryCta.href}
+                  variant="secondary"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpen(false);
+                    scrollToId(primaryCta.href.slice(1), { smooth: !reduceMotion });
+                  }}
+                >
+                  {primaryCta.label}
+                </ButtonLink>
+              ) : null}
             </div>
           </div>
         </Container>

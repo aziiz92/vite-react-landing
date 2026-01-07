@@ -1,0 +1,119 @@
+{
+  "site": {
+    "siteName": "Creator Landing",
+    "tagline": "A calm, editable landing page for personal work.",
+    "description": "A neutral landing template for creators: clear sections, simple storytelling, and easy edits via config.",
+    "authorName": "Your Name",
+    "primaryColor": "#8B5CF6",
+    "secondaryColor": "#22D3EE",
+    "accentColor": "#FB7185",
+    "background": "#FFFFFF",
+    "gradient": "radial-gradient(circle at 15% 0%, rgba(139, 92, 246, 0.24), transparent 55%), radial-gradient(circle at 90% 10%, rgba(34, 211, 238, 0.18), transparent 45%)",
+    "socials": [
+      { "name": "Portfolio", "url": "https://example.com" },
+      { "name": "GitHub", "url": "https://github.com/" },
+      { "name": "Newsletter", "url": "https://example.com/newsletter" }
+    ],
+    "navLinks": [
+      { "label": "Features", "href": "#features", "enabled": true },
+      { "label": "How it works", "href": "#how-it-works", "enabled": true },
+      { "label": "Testimonials", "href": "#testimonials", "enabled": false },
+      { "label": "FAQ", "href": "#faq", "enabled": true }
+    ],
+    "footerLinks": [
+      { "label": "Contact", "href": "mailto:hello@example.com" },
+      { "label": "GitHub", "href": "https://github.com/" },
+      { "label": "License", "href": "https://opensource.org/licenses/MIT" }
+    ],
+    "repo": {
+      "url": "https://github.com/your-handle/vite-react-landing",
+      "useTemplateUrl": "https://github.com/your-handle/vite-react-landing/generate"
+    },
+    "seo": {
+      "title": "Creator Landing — Landing starter",
+      "description": "A calm landing page template for creator portfolios and personal projects.",
+      "ogImagePath": "/og.svg",
+      "url": "https://example.com"
+    },
+    "features": { "enable3dHero": false },
+    "fonts": {
+      "sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "content": {
+    "hero": {
+      "id": "hero",
+      "enabled": true,
+      "headline": "Share your work clearly.",
+      "subheadline": "A neutral, config-driven landing page you can personalize in minutes: sections, links, colors, and copy.",
+      "primaryCta": { "label": "See the sections", "href": "#features" },
+      "secondaryCta": { "label": "Jump to FAQ", "href": "#faq" },
+      "stats": [
+        { "label": "Edit", "value": "2 files" },
+        { "label": "Sections", "value": "toggleable" },
+        { "label": "Tone", "value": "neutral" }
+      ]
+    },
+    "socialProof": {
+      "id": "social-proof",
+      "enabled": true,
+      "title": "Places your work can appear (placeholder)",
+      "note": "Replace these with publications, communities, or clients — or disable this section.",
+      "logos": ["Newsletter", "Community", "Client", "Open Source", "Workshop", "Studio"]
+    },
+    "features": {
+      "id": "features",
+      "enabled": true,
+      "title": "A simple structure for portfolios",
+      "description": "Keep the page readable: one message per section, with links that go somewhere useful.",
+      "items": [
+        { "title": "Config-first edits", "description": "Update brand and links in `src/config/site.ts`, and copy/lists in `src/config/content.ts`." },
+        { "title": "Toggle sections", "description": "Hide testimonials, logo walls, or extras while drafting — re-enable when ready." },
+        { "title": "Optional motion", "description": "Animations are subtle and respect reduced motion preferences." },
+        { "title": "Asset checklist", "description": "Swap `public/favicon.svg` and `public/og.svg` when you publish." }
+      ]
+    },
+    "howItWorks": {
+      "id": "how-it-works",
+      "enabled": true,
+      "title": "Personalize in 10 minutes",
+      "description": "Start from a preset, then adjust the details until it feels like you.",
+      "steps": [
+        { "title": "Run init", "description": "Use `npm run init` to set a name, colors, preset, and section toggles." },
+        { "title": "Replace the copy", "description": "Rewrite the hero, features, and FAQ in your voice — keep it concrete." },
+        { "title": "Link to real work", "description": "Update socials and footer links to point at your portfolio, repos, or contact." }
+      ]
+    },
+    "testimonials": {
+      "id": "testimonials",
+      "enabled": false,
+      "title": "Notes from collaborators (optional)",
+      "description": "Enable this if you have real quotes. Otherwise keep it off.",
+      "items": [
+        { "quote": "Short, specific, and real beats generic hype.", "name": "Name", "role": "Role", "company": "Company" }
+      ]
+    },
+    "faq": {
+      "id": "faq",
+      "enabled": true,
+      "title": "FAQ",
+      "description": "Use this section for expectations, links, and how to reach you.",
+      "items": [
+        { "question": "Where do I edit the content?", "answer": "Update `src/config/content.ts`. Each section has an `enabled` flag and its own fields." },
+        { "question": "Can I remove sections completely?", "answer": "Yes. Disable via config first, then delete the component if you want." },
+        { "question": "Does it handle reduced motion?", "answer": "Yes. Motion respects user settings, and optional 3D can be disabled." }
+      ]
+    },
+    "cta": {
+      "id": "cta",
+      "enabled": true,
+      "title": "Next steps",
+      "description": "Run the init script, update links, and replace assets before sharing.",
+      "primaryCta": { "label": "Run init", "href": "#how-it-works" },
+      "secondaryCta": { "label": "Edit config", "href": "#features" }
+    },
+    "footer": { "id": "footer", "enabled": true }
+  }
+}
+

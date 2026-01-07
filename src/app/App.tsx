@@ -10,13 +10,20 @@ import { FooterSection } from "../sections/Footer";
 import { HeroSection } from "../sections/Hero";
 import { PatternsSection } from "../sections/Patterns";
 import { SocialProofSection } from "../sections/SocialProof";
-import { StepsSection } from "../sections/Steps";
+import { HowItWorksSection } from "../sections/HowItWorks";
 import { TechSection } from "../sections/Tech";
 import { TestimonialsSection } from "../sections/Testimonials";
+import { CTASection } from "../sections/CTA";
 
 export default function App() {
   useEffect(() => {
-    applySeo(site.seo);
+    applySeo(
+      site.seo ?? {
+        title: site.siteName,
+        description: site.description,
+        ogImagePath: "/og.svg",
+      },
+    );
   }, []);
 
   return (
@@ -30,10 +37,11 @@ export default function App() {
           <SocialProofSection />
           <FeaturesSection />
           <PatternsSection />
-          <StepsSection />
+          <HowItWorksSection />
           <TechSection />
           <TestimonialsSection />
           <FAQSection />
+          <CTASection />
         </main>
         <FooterSection />
       </RootLayout>

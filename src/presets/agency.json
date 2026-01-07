@@ -1,0 +1,119 @@
+{
+  "site": {
+    "siteName": "Agency Landing",
+    "tagline": "A clean landing structure for studios and client work.",
+    "description": "A neutral landing template for agencies: clear sections, editable copy, and a small Tailwind-based component set.",
+    "authorName": "Your Studio",
+    "primaryColor": "#6366F1",
+    "secondaryColor": "#A78BFA",
+    "accentColor": "#F97316",
+    "background": "#FFFFFF",
+    "gradient": "radial-gradient(circle at 15% 0%, rgba(99, 102, 241, 0.22), transparent 55%), radial-gradient(circle at 90% 20%, rgba(249, 115, 22, 0.16), transparent 45%)",
+    "socials": [
+      { "name": "Work", "url": "#features" },
+      { "name": "Email", "url": "mailto:hello@example.com" },
+      { "name": "GitHub", "url": "https://github.com/" }
+    ],
+    "navLinks": [
+      { "label": "Features", "href": "#features", "enabled": true },
+      { "label": "How it works", "href": "#how-it-works", "enabled": true },
+      { "label": "Testimonials", "href": "#testimonials", "enabled": true },
+      { "label": "FAQ", "href": "#faq", "enabled": false }
+    ],
+    "footerLinks": [
+      { "label": "Contact", "href": "mailto:hello@example.com" },
+      { "label": "Work", "href": "#" },
+      { "label": "Terms", "href": "#" }
+    ],
+    "repo": {
+      "url": "https://github.com/your-handle/vite-react-landing",
+      "useTemplateUrl": "https://github.com/your-handle/vite-react-landing/generate"
+    },
+    "seo": {
+      "title": "Agency Landing — Landing starter",
+      "description": "A clean landing structure for studios and client work.",
+      "ogImagePath": "/og.svg",
+      "url": "https://example.com"
+    },
+    "features": { "enable3dHero": false },
+    "fonts": {
+      "sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "content": {
+    "hero": {
+      "id": "hero",
+      "enabled": true,
+      "headline": "A calm landing page you can ship to clients.",
+      "subheadline": "Config-driven sections with neutral copy. Swap the text, replace assets, and keep the layout consistent across projects.",
+      "primaryCta": { "label": "See capabilities", "href": "#features" },
+      "secondaryCta": { "label": "How we work", "href": "#how-it-works" },
+      "stats": [
+        { "label": "Setup", "value": "fast" },
+        { "label": "Components", "value": "small" },
+        { "label": "Edits", "value": "config" }
+      ]
+    },
+    "socialProof": {
+      "id": "social-proof",
+      "enabled": true,
+      "title": "Clients (placeholder)",
+      "note": "Replace with real client logos/names — or disable this section.",
+      "logos": ["Client A", "Client B", "Client C", "Studio", "Partner"]
+    },
+    "features": {
+      "id": "features",
+      "enabled": true,
+      "title": "Capabilities and scope",
+      "description": "Use this section for what you do and what you don’t do — keep it concrete.",
+      "items": [
+        { "title": "Config-first editing", "description": "Update site identity and links in `src/config/site.ts`." },
+        { "title": "Clear sections", "description": "Each section is a component with an `enabled` flag in `src/config/content.ts`." },
+        { "title": "Accessibility-aware", "description": "Semantic HTML, focus-visible styles, and reduced motion support." },
+        { "title": "No big UI framework", "description": "Tailwind-based components you can copy, delete, or refine." }
+      ]
+    },
+    "howItWorks": {
+      "id": "how-it-works",
+      "enabled": true,
+      "title": "A repeatable handoff",
+      "description": "Start from a preset, then refine copy and links per client.",
+      "steps": [
+        { "title": "Pick a preset", "description": "Use `npm run preset -- agency` to start from this layout." },
+        { "title": "Replace placeholders", "description": "Swap social proof and testimonials with real references." },
+        { "title": "Ship a static build", "description": "Build once, deploy anywhere with `npm run build`." }
+      ]
+    },
+    "testimonials": {
+      "id": "testimonials",
+      "enabled": true,
+      "title": "What clients say (placeholder)",
+      "description": "Use real quotes, keep them short, and link to work where possible.",
+      "items": [
+        { "quote": "Short, specific feedback is the most believable.", "name": "Name", "role": "Role", "company": "Company" },
+        { "quote": "This template is easy to customize per project.", "name": "Name", "role": "Role", "company": "Company" },
+        { "quote": "The structure helps keep scope under control.", "name": "Name", "role": "Role", "company": "Company" }
+      ]
+    },
+    "faq": {
+      "id": "faq",
+      "enabled": false,
+      "title": "FAQ",
+      "description": "Enable if your client needs common questions answered on-page.",
+      "items": [
+        { "question": "Can we add more sections?", "answer": "Yes. Add a new section component and config entry, then add a nav link if needed." }
+      ]
+    },
+    "cta": {
+      "id": "cta",
+      "enabled": true,
+      "title": "Start a new client page",
+      "description": "Apply a preset, then rewrite copy and replace placeholder links.",
+      "primaryCta": { "label": "Run init", "href": "#how-it-works" },
+      "secondaryCta": { "label": "Edit config", "href": "#features" }
+    },
+    "footer": { "id": "footer", "enabled": true }
+  }
+}
+

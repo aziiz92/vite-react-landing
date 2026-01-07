@@ -1,20 +1,23 @@
 import { motion } from "framer-motion";
-import { features } from "../config/content";
+import { content } from "../config/content";
 import { fadeUp, stagger, useReducedMotion } from "../shared/motion";
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
 import { SectionHeading } from "../components/SectionHeading";
 
 export function FeaturesSection() {
+  const section = content.features;
   const reduceMotion = useReducedMotion();
 
+  if (!section.enabled) return null;
+
   return (
-    <Section id="features">
+    <Section id={section.id}>
       <Container>
         <SectionHeading
           eyebrow="What’s Included"
-          title="A starter baseline you can build on"
-          description="This repo is intentionally small: a handful of reusable sections driven by two config files."
+          title={section.title}
+          description={section.description}
         />
         <motion.div
           variants={stagger}
@@ -23,7 +26,7 @@ export function FeaturesSection() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {features.map((feature) => (
+          {section.items.map((feature) => (
             <motion.div
               key={feature.title}
               variants={fadeUp}

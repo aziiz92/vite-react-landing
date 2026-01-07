@@ -1,20 +1,23 @@
 import { motion } from "framer-motion";
-import { steps } from "../config/content";
+import { content } from "../config/content";
 import { fadeUp, stagger, useReducedMotion } from "../shared/motion";
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
 import { SectionHeading } from "../components/SectionHeading";
 
-export function StepsSection() {
+export function HowItWorksSection() {
+  const section = content.howItWorks;
   const reduceMotion = useReducedMotion();
 
+  if (!section.enabled) return null;
+
   return (
-    <Section id="how">
+    <Section id={section.id}>
       <Container>
         <SectionHeading
           eyebrow="Customize"
-          title="A repeatable workflow for new projects"
-          description="Update the config, swap the copy, and ship. Keep the structure predictable so you can focus on visuals and message."
+          title={section.title}
+          description={section.description}
         />
 
         <motion.ol
@@ -24,7 +27,7 @@ export function StepsSection() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 grid gap-4 md:grid-cols-3"
         >
-          {steps.map((step, idx) => (
+          {section.steps.map((step, idx) => (
             <motion.li
               key={step.title}
               variants={fadeUp}

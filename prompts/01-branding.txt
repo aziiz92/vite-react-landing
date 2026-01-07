@@ -1,0 +1,24 @@
+You are working in a Vite + React + TypeScript + Tailwind landing template.
+
+Task: update the branding in `src/config/site.ts` only.
+
+Constraints:
+- Keep the `site` object shape compatible with `SiteConfig` (`src/config/types.ts`).
+- Do not add UI frameworks or heavy dependencies.
+- Keep tone neutral and open-source friendly.
+
+Inputs:
+- Site name: <NAME>
+- Tagline: <TAGLINE>
+- Description: <DESCRIPTION>
+- Primary color (hex): <#RRGGBB>
+- Accent color (hex): <#RRGGBB>
+- Background color (hex): <#RRGGBB>
+- Gradient (CSS): <GRADIENT_STRING>
+- Social links: <LIST>
+- Footer links: <LIST>
+
+Output:
+- A single patch updating `src/config/site.ts` with the new values.
+- If any nav links refer to disabled sections, set `enabled: false` for those links.
+

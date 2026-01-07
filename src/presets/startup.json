@@ -1,0 +1,121 @@
+{
+  "site": {
+    "siteName": "Startup Landing",
+    "tagline": "A straightforward landing page structure for new products.",
+    "description": "A neutral startup landing template: clear sections, respectful motion, and a small code surface area.",
+    "authorName": "Your Name",
+    "primaryColor": "#22C55E",
+    "secondaryColor": "#38BDF8",
+    "accentColor": "#F59E0B",
+    "background": "#FFFFFF",
+    "gradient": "radial-gradient(circle at 10% 0%, rgba(34, 197, 94, 0.20), transparent 55%), radial-gradient(circle at 90% 20%, rgba(56, 189, 248, 0.18), transparent 45%)",
+    "socials": [
+      { "name": "GitHub", "url": "https://github.com/" },
+      { "name": "Docs", "url": "#faq" },
+      { "name": "Contact", "url": "mailto:hello@example.com" }
+    ],
+    "navLinks": [
+      { "label": "Features", "href": "#features", "enabled": true },
+      { "label": "How it works", "href": "#how-it-works", "enabled": true },
+      { "label": "Testimonials", "href": "#testimonials", "enabled": true },
+      { "label": "FAQ", "href": "#faq", "enabled": true }
+    ],
+    "footerLinks": [
+      { "label": "Status", "href": "#" },
+      { "label": "Docs", "href": "#" },
+      { "label": "Privacy", "href": "#" }
+    ],
+    "repo": {
+      "url": "https://github.com/your-handle/vite-react-landing",
+      "useTemplateUrl": "https://github.com/your-handle/vite-react-landing/generate"
+    },
+    "seo": {
+      "title": "Startup Landing — Landing starter",
+      "description": "A straightforward landing page structure for new products.",
+      "ogImagePath": "/og.svg",
+      "url": "https://example.com"
+    },
+    "features": { "enable3dHero": true },
+    "fonts": {
+      "sans": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+      "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "content": {
+    "hero": {
+      "id": "hero",
+      "enabled": true,
+      "headline": "Explain the product in one page.",
+      "subheadline": "A clean landing layout with toggleable sections and config-driven content. Start neutral, then refine.",
+      "primaryCta": { "label": "See features", "href": "#features" },
+      "secondaryCta": { "label": "Read the FAQ", "href": "#faq" },
+      "stats": [
+        { "label": "Setup", "value": "minutes" },
+        { "label": "Output", "value": "static" },
+        { "label": "Motion", "value": "optional" }
+      ]
+    },
+    "socialProof": {
+      "id": "social-proof",
+      "enabled": true,
+      "title": "Teams using this (placeholder)",
+      "note": "Replace with real customers/users when you have them — or disable the section.",
+      "logos": ["Team A", "Team B", "Community", "Open Source", "Example Co."]
+    },
+    "features": {
+      "id": "features",
+      "enabled": true,
+      "title": "Designed for iteration",
+      "description": "Keep the architecture stable so the message can evolve without churn.",
+      "items": [
+        { "title": "Config-driven sections", "description": "Toggle sections on/off and reorder them without refactoring the whole page." },
+        { "title": "Respectful UX", "description": "Reduced motion support and semantic landmarks out of the box." },
+        { "title": "Small components", "description": "Tailwind-based building blocks, no big UI framework." },
+        { "title": "Static build", "description": "Runs with `npm run dev` and builds with `npm run build`." }
+      ]
+    },
+    "howItWorks": {
+      "id": "how-it-works",
+      "enabled": true,
+      "title": "A simple workflow",
+      "description": "Keep changes in config until you know what should be permanent.",
+      "steps": [
+        { "title": "Pick a preset", "description": "Use `npm run preset -- startup` or `npm run init` to personalize." },
+        { "title": "Edit copy", "description": "Rewrite hero and features to match your product’s scope and audience." },
+        { "title": "Replace placeholders", "description": "Swap logo wall and testimonials with real references (or disable them)." }
+      ]
+    },
+    "testimonials": {
+      "id": "testimonials",
+      "enabled": true,
+      "title": "What early users say (placeholder)",
+      "description": "Keep these short and specific. Disable this section until you have real quotes.",
+      "items": [
+        { "quote": "Short, concrete feedback reads best.", "name": "Name", "role": "Role", "company": "Company" },
+        { "quote": "This layout is easy to tweak without rewriting components.", "name": "Name", "role": "Role", "company": "Company" },
+        { "quote": "Respectful motion + fast load is a good default.", "name": "Name", "role": "Role", "company": "Company" }
+      ]
+    },
+    "faq": {
+      "id": "faq",
+      "enabled": true,
+      "title": "FAQ",
+      "description": "Use this for expectations, links, and common questions.",
+      "items": [
+        { "question": "Where do I change sections?", "answer": "Edit `src/config/content.ts` and toggle `enabled` on each section." },
+        { "question": "Can I remove motion/3D?", "answer": "Yes. Motion respects reduced motion, and 3D can be disabled in `src/config/site.ts`." },
+        { "question": "Is this a full app?", "answer": "No. It’s a landing page template (no auth, billing, dashboards, etc.)." }
+      ]
+    },
+    "cta": {
+      "id": "cta",
+      "enabled": true,
+      "title": "Try the workflow",
+      "description": "Run init, edit config, and replace assets. Keep it neutral and readable.",
+      "primaryCta": { "label": "Run init", "href": "#how-it-works" },
+      "secondaryCta": { "label": "See config files", "href": "#features" }
+    },
+    "footer": { "id": "footer", "enabled": true }
+  }
+}
+

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { tech } from "../config/content";
+import { content } from "../config/content";
 import { fadeUp, stagger, useReducedMotion } from "../shared/motion";
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
@@ -40,15 +40,18 @@ function SignalRail() {
 }
 
 export function TechSection() {
+  const section = content.tech;
   const reduceMotion = useReducedMotion();
 
+  if (!section?.enabled) return null;
+
   return (
-    <Section id="tech">
+    <Section id={section.id}>
       <Container>
         <SectionHeading
-          eyebrow={tech.eyebrow}
-          title={tech.title}
-          description={tech.description}
+          eyebrow="Tech"
+          title={section.title}
+          description={section.description}
           align="center"
         />
 
@@ -63,7 +66,7 @@ export function TechSection() {
             <SignalRail />
           </motion.div>
           <motion.div variants={fadeUp} className="space-y-4">
-            {tech.bullets.map((b) => (
+            {section.bullets.map((b) => (
               <div
                 key={b.title}
                 className="rounded-2xl border border-slate-950/10 bg-slate-950/5 p-6 dark:border-white/10 dark:bg-white/5"

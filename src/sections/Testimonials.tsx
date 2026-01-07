@@ -1,20 +1,23 @@
 import { motion } from "framer-motion";
-import { testimonials } from "../config/content";
+import { content } from "../config/content";
 import { fadeUp, stagger, useReducedMotion } from "../shared/motion";
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
 import { SectionHeading } from "../components/SectionHeading";
 
 export function TestimonialsSection() {
+  const section = content.testimonials;
   const reduceMotion = useReducedMotion();
 
+  if (!section.enabled) return null;
+
   return (
-    <Section id="testimonials">
+    <Section id={section.id}>
       <Container>
         <SectionHeading
           eyebrow="Testimonials"
-          title="Example quotes (replace these)"
-          description="These are placeholders to show layout and rhythm — swap with real quotes or remove the section."
+          title={section.title}
+          description={section.description}
         />
         <motion.div
           variants={stagger}
@@ -23,7 +26,7 @@ export function TestimonialsSection() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 grid gap-4 lg:grid-cols-3"
         >
-          {testimonials.map((t) => (
+          {section.items.map((t) => (
             <motion.figure
               key={t.name}
               variants={fadeUp}
